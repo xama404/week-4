@@ -1,0 +1,36 @@
+.viewproject{
+    width: 100%;
+    height: auto;
+    margin: 100px auto;
+    /* background-color: white; */
+  }
+  
+  #vproject{
+    width: 900px;
+    height: 400px;
+    border-radius: 10px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: white;
+    display: flex;
+  }
+  
+  #vproject img{
+    width: 400px;
+    height: 200px;
+  }
+  
+  #vproject h2,h1{
+    margin-left: 10px;
+    line-height:30px;
+  }
+  
+  #vproject p{
+    margin-left: 10px;
+    line-height: 50px;
+  }
+  
+  /* .viewproject #deskrip{
+    display: flex;
+    float: right;
+  } */

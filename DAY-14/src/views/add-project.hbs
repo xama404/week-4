@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link rel="stylesheet" href="assets/css/myproject.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+
+  <!-- nav awal -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img style="height: 50px;" src="https://dumbways.id/assets/images/brandwhite.png" alt="logo dumbways">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog">Blog</a>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/testimonial">Testimonial</a>
+          </li>       
+          </ul>
+          <a href="/contact" ><button class="btn btn-warning" type="submit">Contact Me</button></a>            
+        </div>
+      </div>
+    </nav>
+    <!-- nav kahir -->
+
+<!-- Container untuk membungkus form -->
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
+      <div class="card p-4">
+        <h2 class="text-center mb-4"><b>ADD MY PROJECT</b></h2>
+        <form name="projectForm" method="post" action="/add-project" onsubmit="return validateForm()">
+          <div class="mb-3">
+            <label for="inputProjectName" class="form-label">Project Name</label>
+            <input type="text" class="form-control input-contact2" id="inputProjectName" name="inputProjectName" placeholder="Input your project name">
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="startDate" class="form-label">Start Date</label>
+              <input type="date" class="form-control input-contact2" id="startDate" name="startDate">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="endDate" class="form-label">End Date</label>
+              <input type="date" class="form-control input-contact2" id="endDate" name="endDate">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="inputDescription" class="form-label">Description</label>
+            <textarea class="form-control input-contact2" id="inputDescription" name="inputDescription" placeholder="Input your description"></textarea>
+          </div>
+          <label class="technologies">Technologies</label>
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-6">
+                <div class="form-check">
+                  <input type="checkbox" id="techNodeJs" name="technologies" value="Node.js" class="form-check-input input-checkbox">
+                  <label for="techNodeJs" class="form-check-label">Node Js</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-check">
+                  <input type="checkbox" id="techNextJs" name="technologies" value="Next.js" class="form-check-input input-checkbox">
+                  <label for="techNextJs" class="form-check-label">Next Js</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-check">
+                  <input type="checkbox" id="techReactJs" name="technologies" value="React.js" class="form-check-input input-checkbox">
+                  <label for="techReactJs" class="form-check-label">React Js</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-check">
+                  <input type="checkbox" id="techTypeScript" name="technologies" value="TypeScript" class="form-check-input input-checkbox">
+                  <label for="techTypeScript" class="form-check-label">TypeScript</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="inputImage" class="form-label">Upload Image</label>
+            <input type="file" id="inputImage" name="inputImage" class="form-control input-file">
+          </div>
+          <div class="d-grid">
+            <input type="submit" value="Submit" class="btn submit-contact2 btn-dark">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Import JS -->
+<script src="/assets/js/myproject.js"></script>
+<!-- Import Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  function validateForm() {
+    var projectName = document.forms["projectForm"]["inputProjectName"].value;
+    var startDate = document.forms["projectForm"]["startDate"].value;
+    var endDate = document.forms["projectForm"]["endDate"].value;
+    var description = document.forms["projectForm"]["inputDescription"].value;
+    var technologies = document.forms["projectForm"]["technologies"];
+    var image = document.forms["projectForm"]["inputImage"].value;
+
+    // Check if any field is empty
+    if (projectName === "" || startDate === "" || endDate === "" || description === "" || image === "") {
+      alert("Please fill out all the fields.");
+      return false;
+    }
+
+    // Check if at least one technology is selected
+    var isTechnologySelected = false;
+    for (var i = 0; i < technologies.length; i++) {
+      if (technologies[i].checked) {
+        isTechnologySelected = true;
+        break;
+      }
+    }
+
+    if (!isTechnologySelected) {
+      alert("Please select at least one technology.");
+      return false;
+    }
+
+    return true;
+  }
+</script>
+</body>
+</html>

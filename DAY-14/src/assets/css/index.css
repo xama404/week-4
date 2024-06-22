@@ -1,0 +1,22 @@
+.nav-item a:hover {
+    color:yellowgreen !important;
+}
+
+.active {
+    color: yellow !important;
+}
+
+.btn-dw{
+    background-color: orangered !important;
+}
+
+.navbar {
+    background-color: rgb(7, 95, 7) !important;    
+}
+
+.navbar-nav{
+    gap: 40px !important;
+    margin-left: 70px !important;
+    font-weight: bold;
+    font-size: 20px !important;
+}
